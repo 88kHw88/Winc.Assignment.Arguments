@@ -4,11 +4,12 @@ __human_name__ = 'arguments'
 
 # Add your code after this line
 
-def greet(name, greeting_template= 'Hello,'):
-    return f"{greeting_template} {name}!" 
+def greet(name, greeting_template= 'Hello, <name>!'):
+    if '<name>' in greeting_template:
+        return greeting_template.replace('<name>', name)
+     
 
-print(greet('Paul', "What's up"))
-
+print(greet('Bob', "What's up, <name>!"))
 
 planets = {
 'Sun': 274,
